@@ -3,9 +3,7 @@ import Page from "./layout";
 
 class Details extends Component {
   render() {
-    return (
-        <Page />
-    );
+    return <Page />;
   }
 }
 
