@@ -8,7 +8,6 @@ class IAppBar extends Component {
     super(props);
     this.state = {
       text: "",
-      suggestions
     };
 
     this.onChageText = this.onChageText.bind(this);
@@ -22,7 +21,8 @@ class IAppBar extends Component {
   onChangeSelection(text) {}
 
   render() {
-    const { text, suggestions } = this.state;
+    const { text } = this.state;
+    const { suggestions } = this.props;
 
     return (
       <Page
@@ -35,4 +35,10 @@ class IAppBar extends Component {
   }
 }
 
-export default connect()(IAppBar);
+const mapStateToProps = (state) => {
+  return {
+     suggestions: state.suggestions,
+  };
+};
+
+export default connect(mapStateToProps)(IAppBar);
