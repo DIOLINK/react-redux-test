@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import findSuggestions from '../../redux/actions/findSuggestion';
 
 import Page from "./layout";
 
 class IAppBar extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      text: "",
+      text: '',
     };
 
     this.onChangeText = this.onChangeText.bind(this);
@@ -16,6 +18,8 @@ class IAppBar extends Component {
 
   onChangeText(text) {
     this.setState({ text });
+
+    this.props.findSuggestions(text);
   }
 
   onChangeSelection(text) {}
@@ -41,4 +45,10 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(IAppBar);
+const mapDispatchToProps = (dispatch) =>{
+  return{
+    findSuggestions: text => dispatch(findSuggestions(text)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(IAppBar);

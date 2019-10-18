@@ -31,7 +31,7 @@ class Autocomplete extends Component {
                     <SearchIcon />
                 </div>
                 <InputBase
-                    placeholder="Search…"
+                    placeholder="Buscar.."
                     value={text}
                     style={{ width: '100%' }}
                     onChange={(event) => {
