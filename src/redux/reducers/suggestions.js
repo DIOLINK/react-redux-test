@@ -1,4 +1,4 @@
-import { type as findSuggestionType } from "../actions/findSuggestion";
+import { type as findSuggestionType } from "../actions/findSuggestions";
 import items from "../../data/items";
 
 const defaulState = [];
@@ -6,8 +6,8 @@ const defaulState = [];
 function reducer(state = defaulState, { type, payload }) {
   switch (type) {
     case findSuggestionType: {
-      const regex = new RegExp(`^${payload}`, "i");
-
+      const regex = new RegExp(`^${payload}`, 'i');
+            
       return items.filter(n => regex.test(n.title));
     }
 

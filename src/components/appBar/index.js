@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import findSuggestions from '../../redux/actions/findSuggestion';
+import findSuggestions from '../../redux/actions/findSuggestions';
 
 import Page from "./layout";
 
@@ -18,7 +18,7 @@ class IAppBar extends Component {
 
   onChangeText(text) {
     this.setState({ text });
-
+    
     this.props.findSuggestions(text);
   }
 
