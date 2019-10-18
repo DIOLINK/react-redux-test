@@ -10,11 +10,11 @@ class IAppBar extends Component {
       text: "",
     };
 
-    this.onChageText = this.onChageText.bind(this);
+    this.onChangeText = this.onChangeText.bind(this);
     this.onChangeSelection = this.onChangeSelection.bind(this);
   }
 
-  onChageText(text) {
+  onChangeText(text) {
     this.setState({ text });
   }
 
@@ -28,7 +28,7 @@ class IAppBar extends Component {
       <Page
         text={text}
         suggestions={suggestions}
-        onChageText={this.onChageText}
+        onChangeText={this.onChangeText}
         onChangeSelection={this.onChangeSelection}
       />
     );
