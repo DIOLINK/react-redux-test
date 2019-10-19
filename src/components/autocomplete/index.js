@@ -61,11 +61,12 @@ class Autocomplete extends Component {
                     }}
                 />
                 {isOpen &&
-                <Paper className="container-results" square>
+                <Paper style={{ zIndex: 9999 }} className="container-results" square>
                     {suggestions.map(suggestion =>
                     <MenuItem
                         key={suggestion.id}
                         component="div"
+                        style={{ zIndex: 9999 }}
                         onClick={() => {
                             onChangeSelection(suggestion.title);
                             this.setState({ isOpen: false });
