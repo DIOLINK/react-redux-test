@@ -1,6 +1,6 @@
 import { createStore, combineReducers } from "redux";
 import results from "./reducers/results";
-import currentItems from "./reducers/currentitems";
+import currentItems from "./reducers/currentItems";
 import suggestions from "./reducers/suggestions";
 
 const reducer = combineReducers({

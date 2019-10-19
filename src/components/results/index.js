@@ -6,7 +6,7 @@ import Page from "./layout";
 
 class Results extends Component {
   render() {
-    const { results, goTo } = this.props;
+    const { results } = this.props;
     
     return (
           <Page
