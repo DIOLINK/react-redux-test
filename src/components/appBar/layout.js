@@ -17,7 +17,7 @@ function Page(props) {
 
       return (
             <AppBar position="static">
-                <ToolBar id="appbar">
+                <ToolBar className="appbar">
                     <Typography variant="h6" color="inherit">
                             Programas
                     </Typography>

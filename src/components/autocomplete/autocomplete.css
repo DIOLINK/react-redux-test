@@ -1,4 +1,4 @@
-#main-container {
+.main-container {
     position: relative;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.25);
@@ -12,14 +12,14 @@
     width: 400px;
 }
 
-#container-icon {
+.container-icon {
     height: 100%;
     pointer-events: none;
     margin-left: .5rem;
     margin-right: .5rem;
 }
 
-#container-results {
+.container-results {
     position: absolute;
     z-index: 100000;
     margin-top: 2.5rem;

@@ -3,6 +3,7 @@ import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 import Paper from '@material-ui/core/Paper';
 import MenuItem from '@material-ui/core/MenuItem';
+
 import './autocomplete.css';
 
 class Autocomplete extends Component {
@@ -26,8 +27,8 @@ class Autocomplete extends Component {
         } = this.state;
 
         return (
-            <div id="main-container">
-                <div id="container-icon">
+            <div className="main-container">
+                <div className="container-icon">
                     <SearchIcon />
                 </div>
                 <InputBase
@@ -46,7 +47,7 @@ class Autocomplete extends Component {
                         }
                     }}
                     onBlur={() => {
-                        setTimeout(() => this.setState({ isOpen: false }), 100);
+                        setTimeout(() => this.setState({ isOpen: false }), 1000);
                     }}
                     onFocus={() => {
                         if (text) {
@@ -60,7 +61,7 @@ class Autocomplete extends Component {
                     }}
                 />
                 {isOpen &&
-                <Paper id="container-results" square>
+                <Paper className="container-results" square>
                     {suggestions.map(suggestion =>
                     <MenuItem
                         key={suggestion.id}

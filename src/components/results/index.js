@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 
 import Page from "./layout";
 
 class Results extends Component {
   render() {
-    const { suggestions } = this.props;
-
-    console.log(this.props);
+    const { results, goTo } = this.props;
     
     return (
           <Page
-              suggestions={suggestions}
+              results={results}
+              goTo={(path)=>{this.props.history.push(path)}}
           />
       ); 
   }
@@ -19,11 +19,11 @@ class Results extends Component {
 
 const mapStateToProps = (state) => {
    return {
-      suggestions: state.suggestions,
+      results: state.results,
    };
 };
 
 // const warpper = connect(mapStateToProps);
 // const component = warpper(Results);
 
-export default connect(mapStateToProps)(Results);
+export default withRouter(connect(mapStateToProps)(Results));
